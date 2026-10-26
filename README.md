@@ -19,7 +19,7 @@ If Xcode and its toolchain were correctly installed, several frameworks for work
 
 If there are compilation errors about missing standard libraries (e.g. `cstddef.h`), try reinstalling Xcode and its toolchain.
 
-With [Macports][https://guide.macports.org/#installing.macports], install glfw, glew and pkg-config:
+With [Macports](https://guide.macports.org/#installing.macports), install glfw, glew and pkg-config:
 ```sh
 sudo macports install glfw glew pkg-config
 ```
