@@ -21,7 +21,7 @@ If there are compilation errors about missing standard libraries (e.g. `cstddef.
 
 With [Macports](https://guide.macports.org/#installing.macports), install glfw, glew and pkg-config:
 ```sh
-sudo port install glfw glew pkg-config
+sudo port install glfw glew pkgconfig
 ```
 
 Additional dependencies - not needed for this example, but may be required for other examples/assignments:
