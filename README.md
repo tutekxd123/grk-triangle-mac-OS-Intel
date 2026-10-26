@@ -19,14 +19,14 @@ If Xcode and its toolchain were correctly installed, several frameworks for work
 
 If there are compilation errors about missing standard libraries (e.g. `cstddef.h`), try reinstalling Xcode and its toolchain.
 
-With [homebrew](https://brew.sh/), install glfw, glew, make and pkg-config:
+With [Macports](https://www.macports.org/install.php), install glfw, glew and pkg-config:
 ```sh
-brew install glfw glew make pkg-config
+sudo macports install glfw glew pkg-config
 ```
 
 Additional dependencies - not needed for this example, but may be required for other examples/assignments:
 ```sh
-brew install jpeg libpng argtable
+sudo macports install jpeg libpng argtable
 ```
 
 ## Build & Run
@@ -43,7 +43,7 @@ You should also see `OpenGL initialized: OpenGL version: 4.1 Metal - xx.x GLSL v
 
 If for some reason glfw from homebrew doesn't work, try compiling it from source:
 ```sh
-brew uninstall glfw
+sudo macports uninstall glfw
 
 git clone https://github.com/glfw/glfw.git && \
 cd glfw && \
