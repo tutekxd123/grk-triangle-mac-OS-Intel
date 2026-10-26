@@ -3,6 +3,8 @@ CXX=g++
 SOURCES = $(wildcard *.cpp)
 OBJECTS = $(SOURCES:.cpp=.o)
 CFLAGS=-c -Wall -DDEBUG -g3 -fpermissive -std=c++11 -MMD
+MACPORTS_INCLUDE = ""
+MACPORTS_LIBS = ""
 
 
 ifeq ($(OS),Windows_NT)
@@ -14,6 +16,9 @@ EXECUTABLE = $(NAME).exe
 LDFLAGS=-Wl,--subsystem,windows
 else ifeq ($(shell uname),Darwin)
 CFLAGS += -DGL_SILENCE_DEPRECATION
+#Lokalizacja MACPORTS
+MACPORTS_INCLUDE = -I/opt/local/include 
+MACPORTS_LIBS = -L/opt/local/lib
 LIBS = $(shell pkg-config --cflags glfw3 glew)
 EXECUTABLE = $(NAME)
 LDFLAGS = $(shell pkg-config --libs --static glfw3 glew) -framework OpenGL -lm
@@ -30,11 +35,11 @@ clean:
 
 # compilation
 .cpp.o:
-	$(CXX) $(CFLAGS) $< -o $@ $(LIBS)
+	$(CXX) $(CFLAGS) $(MACPORTS_INCLUDE) $(MACPORTS_LIBS) $< -o $@ $(LIBS)
 
 # linking
 $(EXECUTABLE): $(OBJECTS)
-	$(CXX) $(OBJECTS) -o $@ $(LDFLAGS) $(LIBS)
+	$(CXX) $(OBJECTS) -o $@ $(LDFLAGS) $(LIBS) $(MACPORTS_INCLUDE) $(MACPORTS_LIBS)
 
 run: $(EXECUTABLE)
 	./$(EXECUTABLE)

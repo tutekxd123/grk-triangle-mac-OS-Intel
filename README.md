@@ -1,10 +1,13 @@
-# OpenGL Triangle on MacOS
+# OpenGL Triangle on MacOS (INTEL)
 
 This is a modified sample project from [Aleksander Denisiuk's Computer Graphics course](http://users.pja.edu.pl/~denisjuk/gk) ([original source code](http://users.pja.edu.pl/~denisjuk/gk/wyklady/g10-podstawyOpenGL.zip)).
 
 The original project has a Makefile setup for Windows with MinGW and Linux, but not for MacOS.
 
 Developing OpenGL applications on modern MacOS versions is a bit tricky because it's an API deprecated in favor of a newer one called Metal. OpenGL runs as a compatibility layer on top of Metal and it's limited to version 4.1.
+
+# Changes in 2026/2027 For Intel-based Macbooks
+Now Intel-based macbooks are obsolete. Homebrew isn't supported and latest version of macOS is 26, however macports is still supported.
 
 ## Prerequisites
 
@@ -16,14 +19,14 @@ If Xcode and its toolchain were correctly installed, several frameworks for work
 
 If there are compilation errors about missing standard libraries (e.g. `cstddef.h`), try reinstalling Xcode and its toolchain.
 
-With [homebrew](https://brew.sh/), install glfw, glew, make and pkg-config:
+With [Macports](https://guide.macports.org/#installing.macports), install glfw, glew and pkg-config:
 ```sh
-brew install glfw glew make pkg-config
+sudo port install glfw glew pkgconfig
 ```
 
 Additional dependencies - not needed for this example, but may be required for other examples/assignments:
 ```sh
-brew install jpeg libpng argtable
+sudo port install jpeg libpng argtable
 ```
 
 ## Build & Run
@@ -40,7 +43,7 @@ You should also see `OpenGL initialized: OpenGL version: 4.1 Metal - xx.x GLSL v
 
 If for some reason glfw from homebrew doesn't work, try compiling it from source:
 ```sh
-brew uninstall glfw
+sudo port uninstall glfw
 
 git clone https://github.com/glfw/glfw.git && \
 cd glfw && \
@@ -54,3 +57,4 @@ sudo make install
 - https://carette.xyz/posts/opengl_and_cpp_on_m1_mac/
 - https://github.com/k0pernicus/opengl-explorer/tree/0e311828fb34b272809432254307e8561e951335
 - https://www.glfw.org/docs/latest/build_guide.html#build_link_pkgconfig
+- https://github.com/s27459-pj/grk-triangle
