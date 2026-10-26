@@ -21,12 +21,12 @@ If there are compilation errors about missing standard libraries (e.g. `cstddef.
 
 With [Macports](https://guide.macports.org/#installing.macports), install glfw, glew and pkg-config:
 ```sh
-sudo macports install glfw glew pkg-config
+sudo port install glfw glew pkg-config
 ```
 
 Additional dependencies - not needed for this example, but may be required for other examples/assignments:
 ```sh
-sudo macports install jpeg libpng argtable
+sudo port install jpeg libpng argtable
 ```
 
 ## Build & Run
@@ -43,7 +43,7 @@ You should also see `OpenGL initialized: OpenGL version: 4.1 Metal - xx.x GLSL v
 
 If for some reason glfw from homebrew doesn't work, try compiling it from source:
 ```sh
-sudo macports uninstall glfw
+sudo port uninstall glfw
 
 git clone https://github.com/glfw/glfw.git && \
 cd glfw && \
