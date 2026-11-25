@@ -1,6 +1,6 @@
 # OpenGL Triangle on MacOS (INTEL)
 
-This is a modified sample project from [Aleksander Denisiuk's Computer Graphics course](http://users.pja.edu.pl/~denisjuk/gk) ([original source code](http://users.pja.edu.pl/~denisjuk/gk/wyklady/g10-podstawyOpenGL.zip)).
+This is a modified sample project from [Aleksander Denisiuk's Modeling and Programming of 3D Graphics course](http://wmii.uwm.edu.pl/~denisjuk/uwm/ip/) ([original source code](http://wmii.uwm.edu.pl/~denisjuk/uwm/ip/w/i04-podstawyOpenGL.zip)).
 
 The original project has a Makefile setup for Windows with MinGW and Linux, but not for MacOS.
 
